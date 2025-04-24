@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Search
+title: Searchbar
 permalink: /navigation/searchbar
 ---
 
