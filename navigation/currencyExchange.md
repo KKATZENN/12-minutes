@@ -12,28 +12,31 @@ button {
 
 </style>
 
-<label>Convert From</label>
-<select id="Convert from">
+
+
+<label>Convert From
+    <select id="Convert from">
 
 <option>USD</option>
-<option>EUR</option>
-<option>CAD</option>
-<option>CNY</option>
-<option>ZAR</option>
+    <option>EUR</option>
+    <option>CAD</option>
+    <option>CNY</option>
+    <option>ZAR</option>
 
 </select>
+</label>
 
-<label>Convert To</label>
-<select id="Convert to">
+<label>Convert To
+    <select id="Convert to">
 
-<option>USD</option>
-<option>EUR</option>
-<option>CAD</option>
-<option>CNY</option>
-<option>ZAR</option>
+    <option>USD</option>
+    <option>EUR</option>
+    <option>CAD</option>
+    <option>CNY</option>
+    <option>ZAR</option>
 
 </select>
-
+</label>
 
 <button onclick="conversion()"> Convert Currencies</button>
 
