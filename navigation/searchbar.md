@@ -1,6 +1,6 @@
 ---
 layout: base
-title: SP GAME
+title: Search
 permalink: /navigation/searchbar
 ---
 
