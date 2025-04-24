@@ -7,12 +7,28 @@ permalink: /api/CurrencyExchange
 <style>
 
 button {
-color:
+
 }
 
 </style>
 
-<select id="from">
+<select id="Convert from">
+
+<option>USD</option>
+<option>EUR</option>
+<option>CAD</option>
+<option>CNY</option>
+<option>ZAR</option>
+
+</select>
+
+<select id="Convert to">
+
+<option>USD</option>
+<option>EUR</option>
+<option>CAD</option>
+<option>CNY</option>
+<option>ZAR</option>
 
 </select>
 
