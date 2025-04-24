@@ -6,17 +6,26 @@ permalink: /api/CurrencyExchange
 
 <style>
 
+body {
+transition: background-color 0.3s, color 0.3s;
+}
 button.lightmode {
 color: #d4cecd;
+border: 2px inset;
+border-radius: 5px;
 }
 button.darkmode {
-
+color: #000036;
+border: 2px inset;
+border-radius: 5px;
 }
 body.lightmode {
-color: white;
+color: #ffffff;
+background-color: #ffffff;
 }
 body.darkmode {
-
+color: #1c1c1c;
+background-color: #1c1c1c;
 }
 
 </style>
