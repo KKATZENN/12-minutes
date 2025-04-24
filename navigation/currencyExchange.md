@@ -12,6 +12,7 @@ button {
 
 </style>
 
+<label>Convert From</label>
 <select id="Convert from">
 
 <option>USD</option>
@@ -22,6 +23,7 @@ button {
 
 </select>
 
+<label>Convert To</label>
 <select id="Convert to">
 
 <option>USD</option>
