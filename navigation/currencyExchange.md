@@ -6,8 +6,17 @@ permalink: /api/CurrencyExchange
 
 <style>
 
-button {
+button.lightmode {
 
+}
+button.darkmode {
+
+}
+body.lightmode {
+
+}
+body.darkmode {
+    
 }
 
 </style>
