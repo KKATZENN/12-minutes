@@ -32,32 +32,17 @@ background-color: #1c1c1c;
 
 <body>
 
-<h1>Currency Exchanger</h1>
+<h1>USD Currency Exchanger</h1>
 
 <input id="amount" type="number" placeholder="Amount">
 
-<h3>Convert From</h3>
-<select id="Convert from">
-
-<option>USD</option>
-<option>EUR</option>
-<option>CAD</option>
-<option>CNY</option>
-<option>ZAR</option>
-
-</select>
-
-<br>
-
 <h3>Convert To</h3>
-    <select id="Convert to">
-
-<option>USD</option>
+<select id="Convert to">
+    <option>USD</option>
     <option>EUR</option>
     <option>CAD</option>
     <option>CNY</option>
     <option>ZAR</option>
-
 </select>
 
 
@@ -69,9 +54,14 @@ background-color: #1c1c1c;
 
 
 async function conversion() {
+    const amount = document.getElementById("amount").value;
+    const convertTo = document.getElementById("Convert to").value;
+    const converter = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_kbReXEndi2qtPBsupWuLTRPhWR2zFbY1tXW9jXXL&currencies=EUR%2CUSD%2CCAD%2CCNY%2CZAR`);
+    const converting = await res.json();
+    const rate = data.data[toCurrency];
+    const result = amount * rate;
 
-
-await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_kbReXEndi2qtPBsupWuLTRPhWR2zFbY1tXW9jXXL&currencies=EUR%2CUSD%2CCAD%2CCNY%2CZAR`)  
+    document.getElementById("result").innerText = `${amount} USD = ${converted.toFixed(2)} ${toCurrency}`;
 }
 
 async function colormode() {
