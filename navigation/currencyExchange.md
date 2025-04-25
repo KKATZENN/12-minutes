@@ -66,7 +66,7 @@ border-radius: 5px;
 
 
 <button onclick="conversion()"> Convert Currencies</button>
-
+<div id="result"></div>
 <button onclick="colormode()"> Light Mode </button>
 
 <script>
