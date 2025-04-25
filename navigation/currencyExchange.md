@@ -10,12 +10,12 @@ body {
 transition: background-color 0.3s, color 0.3s;
 }
 button.lightmode {
-color: #d4cecd;
+color: #000036;
 border: 2px inset;
 border-radius: 5px;
 }
 button.darkmode {
-color: #000036;
+color:rgb(124, 118, 117);
 border: 2px inset;
 border-radius: 5px;
 }
@@ -27,7 +27,26 @@ body.darkmode {
 color: #1c1c1c;
 background-color: #1c1c1c;
 }
-
+select.lightmode {
+color: #000036;
+border: 2px inset;
+border-radius: 5px;
+}
+select.darkmode {
+color:rgb(124, 118, 117);
+border: 2px inset;
+border-radius: 5px;
+}
+input.lightmode {
+color: #000036;
+border: 2px inset;
+border-radius: 5px;
+}
+input.darkmode {
+color:rgb(124, 118, 117);
+border: 2px inset;
+border-radius: 5px;
+}
 </style>
 
 <body>
@@ -76,14 +95,19 @@ function colormode() {
 if (body.classList.contains("lightmode")) {
     body.classList.remove("lightmode");
     body.classList.add("darkmode");
+    button.classList.remove("lightmode");
+    button.classList.add("darkmode");
     button.innerText = "Light Mode";
     localStorage.setItem("theme", "darkmode");
     } else {
     body.classList.remove("darkmode");
     body.classList.add("lightmode");
+    button.classList.remove("darkmode");
+    button.classList.add("lightmode");
     button.innerText = "Dark Mode";
     localStorage.setItem("theme", "lightmode");
     }
+
 }
 
 
