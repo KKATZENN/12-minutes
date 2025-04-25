@@ -66,7 +66,7 @@ border-radius: 5px;
 
 
 <button onclick="conversion()"> Convert Currencies</button>
-<div id="result"></div>
+<div id="result">Test</div>
 <button onclick="colormode()"> Light Mode </button>
 
 <script>
@@ -85,7 +85,8 @@ async function conversion() {
         return;
     }
 
-    document.getElementById("result").innerText = `${amount} USD = ${converted.toFixed(2)} ${toCurrency}`;
+    const alert = document.getElementById("result").innerText = `${amount} USD = ${converted.toFixed(2)} ${toCurrency}`;
+    alert(alert);
 }
 
 function colormode() {
