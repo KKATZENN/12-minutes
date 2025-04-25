@@ -10,12 +10,12 @@ body {
 transition: background-color 0.3s, color 0.3s;
 }
 button.lightmode {
-color: #000036;
+color:rgb(124, 118, 117);
 border: 2px inset;
 border-radius: 5px;
 }
 button.darkmode {
-color:rgb(124, 118, 117);
+color: #000036;
 border: 2px inset;
 border-radius: 5px;
 }
@@ -28,22 +28,22 @@ color: #1c1c1c;
 background-color: #1c1c1c;
 }
 select.lightmode {
-color: #000036;
+color:rgb(124, 118, 117);
 border: 2px inset;
 border-radius: 5px;
 }
 select.darkmode {
-color:rgb(124, 118, 117);
-border: 2px inset;
-border-radius: 5px;
-}
-input.lightmode {
 color: #000036;
 border: 2px inset;
 border-radius: 5px;
 }
-input.darkmode {
+input.lightmode {
 color:rgb(124, 118, 117);
+border: 2px inset;
+border-radius: 5px;
+}
+input.darkmode {
+color: #000036;
 border: 2px inset;
 border-radius: 5px;
 }
@@ -89,8 +89,11 @@ async function conversion() {
 }
 
 function colormode() {
-      const body = document.body;
-      const button = document.getElementById("themeToggle");
+    const body = document.body;
+    const button = document.getElementById("themeToggle");
+    const savedmode = localStorage.getItem("theme");
+    body.classList = savedmode;
+    button.classlist = savedmode;
 
 if (body.classList.contains("lightmode")) {
     body.classList.remove("lightmode");
