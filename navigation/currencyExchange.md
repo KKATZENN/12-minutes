@@ -48,7 +48,7 @@ background-color: #1c1c1c;
 
 <button onclick="conversion()"> Convert Currencies</button>
 
-<button onclick="colormode()"> Dark Mode </button>
+<button onclick="colormode()"> Light Mode </button>
 
 <script>
 
@@ -61,11 +61,29 @@ async function conversion() {
     const rate = data.data[toCurrency];
     const result = amount * rate;
 
+    if(amount <= 0) {
+        document.getElementById("result").innerText = "Please enter a valid amount.";
+        return;
+    }
+
     document.getElementById("result").innerText = `${amount} USD = ${converted.toFixed(2)} ${toCurrency}`;
 }
 
-async function colormode() {
+function colormode() {
+      const body = document.body;
+      const button = document.getElementById("themeToggle");
 
+if (body.classList.contains("lightmode")) {
+    body.classList.remove("lightmode");
+    body.classList.add("darkmode");
+    button.innerText = "Light Mode";
+    localStorage.setItem("theme", "darkmode");
+    } else {
+    body.classList.remove("darkmode");
+    body.classList.add("lightmode");
+    button.innerText = "Dark Mode";
+    localStorage.setItem("theme", "lightmode");
+    }
 }
 
 
