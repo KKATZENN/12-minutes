@@ -75,7 +75,7 @@ border-radius: 5px;
 async function conversion() {
     const amount = document.getElementById("amount").value;
     const convertTo = document.getElementById("Convert to").value;
-    const converter = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_kbReXEndi2qtPBsupWuLTRPhWR2zFbY1tXW9jXXL&currencies=EUR%2CUSD%2CCAD%2CCNY%2CZAR`);
+    const converter = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_kbReXEndi2qtPBsupWuLTRPhWR2zFbY1tXW9jXXL&currencies=EUR%2CUSD%2CCAD%2CCNY%2CZAR`) || await fetch(`fca_live_kbReXEndi2qtPBsupWuLTRPhWR2zFbY1tXW9jXXLvv`); 
     const converting = await res.json();
     const rate = data.data[toCurrency];
     const result = amount * rate;
