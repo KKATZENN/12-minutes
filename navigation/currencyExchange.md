@@ -34,8 +34,9 @@ background-color: #1c1c1c;
 
 <h1>Currency Exchanger</h1>
 
-<input >
-<label>Convert From  
+<input id="amount" type="number" placeholder="Amount">
+
+<h3>Convert From</h3>
 <select id="Convert from">
 
 <option>USD</option>
@@ -45,7 +46,8 @@ background-color: #1c1c1c;
 <option>ZAR</option>
 
 </select>
-</label>
+
+<br>
 
 <h3>Convert To</h3>
     <select id="Convert to">
