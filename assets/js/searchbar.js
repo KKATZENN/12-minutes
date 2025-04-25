@@ -12,22 +12,3 @@
 
 //Clearing Data
 //localStorage.clear();
-
-asddddddddddddddddas
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-asfasfddas
