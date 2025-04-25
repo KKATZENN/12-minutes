@@ -30,10 +30,25 @@ background-color: #1c1c1c;
 
 </style>
 
+<body>
 
+<h1>Currency Exchanger</h1>
 
-<label>Convert From
-    <select id="Convert from">
+<input >
+<label>Convert From  
+<select id="Convert from">
+
+<option>USD</option>
+<option>EUR</option>
+<option>CAD</option>
+<option>CNY</option>
+<option>ZAR</option>
+
+</select>
+</label>
+
+<h3>Convert To</h3>
+    <select id="Convert to">
 
 <option>USD</option>
     <option>EUR</option>
@@ -42,19 +57,7 @@ background-color: #1c1c1c;
     <option>ZAR</option>
 
 </select>
-</label>
 
-<label>Convert To
-    <select id="Convert to">
-
-    <option>USD</option>
-    <option>EUR</option>
-    <option>CAD</option>
-    <option>CNY</option>
-    <option>ZAR</option>
-
-</select>
-</label>
 
 <button onclick="conversion()"> Convert Currencies</button>
 
@@ -69,8 +72,12 @@ async function conversion() {
 await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_kbReXEndi2qtPBsupWuLTRPhWR2zFbY1tXW9jXXL&currencies=EUR%2CUSD%2CCAD%2CCNY%2CZAR`)  
 }
 
+async function colormode() {
 
+}
 
 
 
 </script>
+
+</body>
