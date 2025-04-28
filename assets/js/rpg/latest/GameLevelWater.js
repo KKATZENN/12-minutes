@@ -68,7 +68,17 @@ class GameLevelWater {
         pixels: {height: 256, width: 384},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
         orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 9, columns: 3 },  // This is the stationary npc, down is default 
+        down: {row: 0, start: 9, columns: 3 }, 
+        left: {row:1, start: 9, columns: 3},
+        right: {row:2, start: 9, columns: 3},
+        up: {row:3, start: 9, columns: 3},
+
+        gameBoundries: {
+          xMax: (12),
+          xMin: 12,
+          yMax: (12),
+          yMin: 12
+        }
     };
 
     // List of objects defnitions for this level
