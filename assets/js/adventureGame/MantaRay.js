@@ -1,5 +1,5 @@
-import Enemy from './Enemy.js';
-import GameEnv from './GameEnv.js';
+import Enemy from '../rpg/latest/Enemy.js';
+import GameEnv from '../rpg/latest/GameEnv.js';
 import Player from './Player.js';
 
 class Mantaray extends Enemy {
