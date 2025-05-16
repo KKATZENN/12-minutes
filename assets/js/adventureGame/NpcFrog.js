@@ -1,5 +1,5 @@
-import GameEnv from "./GameEnv.js";
-import GameObject from "./GameObject.js";
+import GameEnv from "../adventureGame/GameEngine/GameEnv.js";
+import GameObject from "../adventureGame/GameEngine/GameObject.js";
 
 class NpcFrog extends GameObject {
     constructor(data = null) {
