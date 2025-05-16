@@ -130,9 +130,13 @@ class GameLevelDifferentWater {
         INIT_POSITION: { x: 100, y: 100 },
         orientation: {rows: 8, columns: 12 },
         down: {row: 5, start: 0, columns: 3 },
+        downRight: {row: 5, start: 0, columns: 3, rotate: Math.PI/16 },
+        downLeft: {row: 5, start: 0, columns: 3, rotate: -Math.PI/16 },
         right: {row: 6, start: 0, columns: 3 },
         left: {row: 7, start: 0, columns: 3 },
         up: {row: 8, start: 0, columns: 3 },  
+        upLeft: {row: 8, start: 0, columns: 3, rotate: Math.PI/16 },
+        upRight: {row: 8, start: 0, columns: 3, rotate: -Math.PI/16 },
         hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
 
         walkingArea: {
