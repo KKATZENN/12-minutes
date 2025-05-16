@@ -75,7 +75,7 @@ class GameLevelDifferentWater {
         up: {row:3, start: 9, columns: 3},  
         dialogues: [
           "Ribbit.",
-          "You hear how a mha went to a zoo to uh, might I say, interact with the frogs?",
+          "You hear how a mha fan went to a zoo to uh, might I say, interact with the frogs?",
           "Dont frogs breathe air? Why am I down here",
           "Croak. Oh wait wrong animal."
         ],
