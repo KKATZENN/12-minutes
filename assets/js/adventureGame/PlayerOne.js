@@ -1,4 +1,4 @@
-import GameObject from './GameEngine/gameObject';
+import GameObject from '../adventureGame/GameEngine/gameObject';
 
 class PlayerOne extends GameObject {
     constructor(data = null) {
