@@ -128,7 +128,7 @@ class GameLevelDifferentWater {
     const sprite_data_mantaRay = {
         id: 'mantaray',
         greeting: sprite_greet_mantaRay,
-        src: sprite_src_creeper,
+        src: sprite_src_mantaRay,
         SCALE_FACTOR: 400,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 25,
         pixels: {height: 1200, width: 1600},
@@ -240,7 +240,7 @@ class GameLevelDifferentWater {
       { class: PlayerOne, data: sprite_data_turtle },
       { class: PlayerTwo, data: sprite_data_fish },
       { class: NpcFrog, data: sprite_data_frog },
-      { class: Mantaray, data: sprite_greet_mantaRay}
+      { class: Mantaray, data: sprite_data_mantaRay}
     ];
   }
 

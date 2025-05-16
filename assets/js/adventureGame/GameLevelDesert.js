@@ -185,7 +185,7 @@ class GameLevelDesert {
     
           };
 
-              const sprite_src_idkwhat = path + "/images/rpg/fishies.png"; // be sure to include the path
+          const sprite_src_idkwhat = path + "/images/rpg/fishies.png"; // be sure to include the path
           const sprite_greet_idkwhat = "Let's take a dive!";
           const sprite_data_idkwhat = {
             id: 'noidea',
@@ -196,10 +196,7 @@ class GameLevelDesert {
             pixels: {width: 2029, height: 2025},
             INIT_POSITION: { x: width / 3 + 100, y: height / 3 - 50 }, // Adjusted position
             orientation: {rows: 8, columns: 12 },
-            down: {row: 3, start: 3, columns: 3 },  
-            left: {row: 4, start: 3, columns: 3 },  
-            right: {row: 5, start: 3, columns: 3 }, 
-            up: {row: 6, start: 3, columns: 3 },    
+            down: {row: 3, start: 3, columns: 3 },  //down is default 
             hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
 
             reaction: function() {
