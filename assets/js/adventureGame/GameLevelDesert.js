@@ -160,7 +160,9 @@ class GameLevelDesert {
               // Add more later?
             ],
             reaction: function() {
-              DialogueSystem.showRandomDialogue();
+              const dialogue = new DialogueSystem();
+              
+              dialogue.showRandomDialogue();
             },
             /* Interact function
             *  This function is called when the player interacts with the NPC
