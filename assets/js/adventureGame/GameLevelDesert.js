@@ -208,7 +208,7 @@ class GameLevelDesert {
               "You're breathing too much air, hop in and inhale good nutritious salt water :)"
             ],
             reaction: function() {
-              const dialogue = new DialogueSystem();
+              const dialogue = new DialogueSystem(this.dialogues);
               
               dialogue.showRandomDialogue();
             },
