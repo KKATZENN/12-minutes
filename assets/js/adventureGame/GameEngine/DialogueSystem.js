@@ -2,10 +2,10 @@ class DialogueSystem {
   constructor(options = {}) {
     // Default dialogue arrays
     this.dialogues = options.dialogues || [
-      "I love the water, You wanna join me?",
-      "Idk how im breathing here, I wanna go back.",
-      "How do snakes do this? Just because im a sea SNAKE doesn't mean anything!",
-      "You're breathing too much air, hop in and inhale good nutritious salt water :)"
+      "Hey!",
+      "pretend im doing small talk, plz",
+      "How are you doing?",
+      "Quieres aprender espanol? Tomar una clase."
     ];
     
     // Create a unique ID for this dialogue system

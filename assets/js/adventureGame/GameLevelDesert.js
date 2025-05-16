@@ -198,9 +198,14 @@ class GameLevelDesert {
             orientation: {rows: 8, columns: 12 },
             down: {row: 3, start: 3, columns: 3 },  //down is default 
             hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-
+            dialogues: [
+              "I love the water, You wanna join me?",
+              "Idk how im breathing here, I wanna go back.",
+              "How do snakes do this? Just because im a sea SNAKE doesn't mean anything!",
+              "You're breathing too much air, hop in and inhale good nutritious salt water :)"
+            ],
             reaction: function() {
-              alert(sprite_greet_idkwhat);
+              dialogueSystem.showRandomDialogue();
             },
 
             interact: function() {
