@@ -81,7 +81,7 @@ class GameLevelDifferentWater {
         ],
 
         reaction: function() {
-          dialogueSystem.showRandomDialogue();
+          DialogueSystem.showRandomDialogue();
         },
 
         walkingArea: {

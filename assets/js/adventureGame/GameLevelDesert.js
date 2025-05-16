@@ -4,6 +4,7 @@ import Player from './GameEngine/Player.js';
 import Npc from './GameEngine/Npc.js';
 import Quiz from './Quiz.js';
 import GameControl from './GameEngine/GameControl.js';
+import DialogueSystem from '../adventureGame/GameEngine/DialogueSystem.js';
 import GameLevelStarWars from './GameLevelStarWars.js';
 import GameLevelMeteorBlaster from './GameLevelMeteorBlaster.js';
 import GameLevelMinesweeper from './GameLevelMinesweeper.js';
@@ -159,7 +160,7 @@ class GameLevelDesert {
               // Add more later?
             ],
             reaction: function() {
-              dialogueSystem.showRandomDialogue();
+              DialogueSystem.showRandomDialogue();
             },
             /* Interact function
             *  This function is called when the player interacts with the NPC
@@ -205,7 +206,7 @@ class GameLevelDesert {
               "You're breathing too much air, hop in and inhale good nutritious salt water :)"
             ],
             reaction: function() {
-              dialogueSystem.showRandomDialogue();
+              DialogueSystem.showRandomDialogue();
             },
 
             interact: function() {
