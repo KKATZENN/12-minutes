@@ -157,7 +157,7 @@ class GameLevelDesert {
             *  It displays an alert with the greeting message
             */
             reaction: function() {
-              alert(sprite_greet_endportal);
+              dialogueSystem.showRandomDialogue();
             },
             /* Interact function
             *  This function is called when the player interacts with the NPC

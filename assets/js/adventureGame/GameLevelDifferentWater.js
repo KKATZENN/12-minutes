@@ -5,6 +5,7 @@ import PlayerOne from '../adventureGame/PlayerOne.js';
 import PlayerTwo from '../adventureGame/PlayerTwo.js';
 import NpcFrog from '../adventureGame/NpcFrog.js';
 import Mantaray from '../adventureGame/MantaRay.js';
+import DialogueSystem from '../adventureGame/GameEngine/DialogueSystem.js';
 
 class GameLevelDifferentWater {
   constructor(path) {
@@ -72,6 +73,10 @@ class GameLevelDifferentWater {
         left: {row:1, start: 9, columns: 3},
         right: {row:2, start: 9, columns: 3}, 
         up: {row:3, start: 9, columns: 3},
+
+        reaction: function() {
+          dialogueSystem.showRandomDialogue();
+        },
 
         walkingArea: {
           xMin: width / 10, //left boundary
@@ -208,7 +213,17 @@ class GameLevelDifferentWater {
 
       setInterval(() => {
         sprite_data_creeper.updatePosition(); 
-      }, 100);
+      }, 100)
+      
+      setTimeout(() => {
+      // Clean up any lingering resources before reload
+        if (self && self.timerInterval) {
+          clearInterval(self.timerInterval);
+        }
+                        
+        // Force a complete page reload - most reliable way to reset
+        location.reload();
+      }, 4000);
 
     // List of objects defnitions for this level
     this.objects = [
