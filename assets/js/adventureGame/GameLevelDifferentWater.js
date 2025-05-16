@@ -1,12 +1,12 @@
 // To build GameLevels, each contains GameObjects from below imports
-import GameEnv from '../rpg/latest/GameEnv.js';
-import Background from '../rpg/latest/Background.js';
-import PlayerOne from '../rpg/latest/PlayerOne.js';
-import PlayerTwo from '../rpg/latest/PlayerTwo.js';
-import NpcFrog from '../rpg/latest/NpcFrog.js';
+import GameEnv from '../adventureGame/GameEngine/GameEnv.js';
+import Background from '../adventureGame/GameEngine/Background.js';
+import PlayerOne from '../adventureGame/PlayerOne.js';
+import PlayerTwo from '../adventureGame/PlayerTwo.js';
+import NpcFrog from '../adventureGame/NpcFrog.js';
+import Mantaray from '../adventureGame/MantaRay.js';
 
-
-class GameLevelWater {
+class GameLevelDifferentWater {
   constructor(path) {
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
@@ -70,15 +70,46 @@ class GameLevelWater {
         orientation: {rows: 8, columns: 12 },
         down: {row: 0, start: 9, columns: 3 }, 
         left: {row:1, start: 9, columns: 3},
-        right: {row:2, start: 9, columns: 3},
+        right: {row:2, start: 9, columns: 3}, 
         up: {row:3, start: 9, columns: 3},
 
-        gameBoundries: {
-          xMax: (12),
-          xMin: 12,
-          yMax: (12),
-          yMin: 12
+        walkingArea: {
+          xMin: width / 10, //left boundary
+          xMax: (width * 5 / 7), //right boundary 
+          yMin: height / 4, //top boundary 
+          yMax: (height * 8 / 15) //bottom boundary
+        },
+
+        speed : 5,
+        direction: { x: 1, y: 1 },
+
+        updatePosition: function () {
+          console.log(`Manta Ray position: (${this.INIT_POSITION.x}, ${this.INIT_POSITION.y})`);
+          this.INIT_POSITION.x += this.direction.x * this.speed; // Update x position based on direction and speed
+          this.INIT_POSITION.y += this.direction.y * this.speed; // Update y position based on direction and speed
+
+          if (this.INIT_POSITION.x <= this.walkingArea.xMin) {
+            this.INIT_POSITION.x = this.walkingArea.xMin;
+            this.direction.x = 1; 
+          }
+          if (this.INIT_POSITION.x >= this.walkingArea.xMax) {
+            this.INIT_POSITION.x = this.walkingArea.xMax;
+            this.direction.x = -1; 
+          }
+          if (this.INIT_POSITION.y <= this.walkingArea.yMin) {
+            this.INIT_POSITION.y = this.walkingArea.yMin;
+            this.direction.y = 1; 
+          }
+          if (this.INIT_POSITION.y >= this.walkingArea.yMax) {
+            this.INIT_POSITION.y = this.walkingArea.yMax;
+            this.direction.y = -1; 
+          }
+
+          const spriteElement = document.getElementById(this.id);
+          if (spriteElement) { 
+            spriteElement.style.transform = this.direction.x === -1 ? "scaleX(-1)" : "scaleX(1)";
         }
+      },
     };
 
         // NPC data for creeper
@@ -148,10 +179,10 @@ class GameLevelWater {
       { class: PlayerOne, data: sprite_data_turtle },
       { class: PlayerTwo, data: sprite_data_fish },
       { class: NpcFrog, data: sprite_data_frog },
-      { class: Enemy}
+      { class: Mantaray, data: sprite_greet_mantaRay}
     ];
   }
 
 }
 
-export default GameLevelWater;
+export default GameLevelDifferentWater;

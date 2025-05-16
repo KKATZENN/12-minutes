@@ -8,6 +8,7 @@ import GameLevelStarWars from './GameLevelStarWars.js';
 import GameLevelMeteorBlaster from './GameLevelMeteorBlaster.js';
 import GameLevelMinesweeper from './GameLevelMinesweeper.js';
 import GameLevelEnd from './GameLevelEnd.js';
+import GameLevelDifferentWater from './GameLevelDifferentWater.js';
 
 class GameLevelDesert {
   constructor(gameEnv) {
@@ -167,6 +168,47 @@ class GameLevelDesert {
               let primaryGame = gameEnv.gameControl;
               // Define the game in game level
               let levelArray = [GameLevelEnd];
+              // Define a new GameControl instance with the End level
+              let gameInGame = new GameControl(gameEnv.game, levelArray);
+              // Pause the primary game 
+              primaryGame.pause();
+              // Start the game in game
+              gameInGame.start();
+              // Setup "callback" function to allow transition from game in game to the underlying game
+              gameInGame.gameOver = function() {
+                // Call .resume on primary game
+                primaryGame.resume();
+              }
+            }
+    
+          };
+
+              const sprite_src_idkwhat = path + "/images/rpg"; // be sure to include the path
+          const sprite_greet_idkwhat = "Let's take a dive!";
+          const sprite_data_idkwhat = {
+            id: 'noidea',
+            greeting: sprite_greet_idkwhat,
+            src: sprite_src_idkwhat,
+            SCALE_FACTOR: 400,  //no
+            ANIMATION_RATE: 100,
+            pixels: {width: 2029, height: 2025},
+            INIT_POSITION: { x: (width * 4 / 5), y: (height * 2 / 10)}, // Adjusted position
+            orientation: {rows: 8, columns: 12 },
+            down: {row: 0, start: 0, columns: 3 },  
+            left: {row: 1, start: 0, columns: 3 },  
+            right: {row: 2, start: 0, columns: 3 }, 
+            up: {row: 3, start: 0, columns: 3 },    
+            hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
+
+            reaction: function() {
+              alert(sprite_greet_idkwhat);
+            },
+
+            interact: function() {
+              // Set a primary game reference from the game environment
+              let primaryGame = gameEnv.gameControl;
+              // Define the game in game level
+              let levelArray = [GameLevelDifferentWater];
               // Define a new GameControl instance with the End level
               let gameInGame = new GameControl(gameEnv.game, levelArray);
               // Pause the primary game 

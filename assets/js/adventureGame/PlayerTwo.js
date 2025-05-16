@@ -1,4 +1,4 @@
-import GameObject from './GameObject.js';
+import GameObject from './adventureGame/GameEngine/gameObject'
 
 class PlayerTwo extends GameObject {
     constructor(imageSrc = null) {
