@@ -192,7 +192,7 @@ class GameLevelDesert {
             SCALE_FACTOR: 400,  //no
             ANIMATION_RATE: 100,
             pixels: {width: 2029, height: 2025},
-            INIT_POSITION: { x: width / 3 + 50, y: height / 3 + 50 }, // Adjusted position
+            INIT_POSITION: { x: width / 3 + 100, y: height / 3 - 50 }, // Adjusted position
             orientation: {rows: 8, columns: 12 },
             down: {row: 3, start: 3, columns: 3 },  
             left: {row: 4, start: 3, columns: 3 },  
