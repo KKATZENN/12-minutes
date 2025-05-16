@@ -72,7 +72,13 @@ class GameLevelDifferentWater {
         down: {row: 0, start: 9, columns: 3 }, 
         left: {row:1, start: 9, columns: 3},
         right: {row:2, start: 9, columns: 3}, 
-        up: {row:3, start: 9, columns: 3},
+        up: {row:3, start: 9, columns: 3},  
+        dialogues: [
+          "Ribbit.",
+          "You hear how a mha went to a zoo to uh, might I say, interact with the frogs?",
+          "Dont frogs breathe air? Why am I down here",
+          "Croak. Oh wait wrong animal."
+        ],
 
         reaction: function() {
           dialogueSystem.showRandomDialogue();
@@ -117,7 +123,6 @@ class GameLevelDifferentWater {
       },
     };
 
-        // NPC data for creeper
     const sprite_src_mantaRay = path + "/images/rpg/fishies.png"; // be sure to include the path
     const sprite_greet_mantaRay = "go away";
     const sprite_data_mantaRay = {

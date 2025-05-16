@@ -152,10 +152,12 @@ class GameLevelDesert {
             orientation: {rows: 1, columns: 1 },
             down: {row: 0, start: 0, columns: 1 },  // This is the stationary npc, down is default 
             hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-            /* Reaction function
-            *  This function is called when the player collides with the NPC
-            *  It displays an alert with the greeting message
-            */
+            dialogues: [
+              "The end ship looms before you...",
+              "The end ship seems to beckon you to loot the treasure within...",
+              "funny purple spaceship heheheheheh",
+              // Add more later?
+            ],
             reaction: function() {
               dialogueSystem.showRandomDialogue();
             },
