@@ -128,11 +128,11 @@ class GameLevelDifferentWater {
         ANIMATION_RATE: 25,
         pixels: {height: 1200, width: 1600},
         INIT_POSITION: { x: 100, y: 100 },
-        orientation: {rows: 1, columns: 2 },
-        down: {row: 0, start: 0, columns: 2 },
-        right: {row: 0, start: 0, columns: 2 },
-        left: {row: 0, start: 0, columns: 2 },
-        up: {row: 0, start: 0, columns: 2 },  
+        orientation: {rows: 8, columns: 12 },
+        down: {row: 5, start: 0, columns: 3 },
+        right: {row: 6, start: 0, columns: 3 },
+        left: {row: 7, start: 0, columns: 3 },
+        up: {row: 8, start: 0, columns: 3 },  
         hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
 
         walkingArea: {

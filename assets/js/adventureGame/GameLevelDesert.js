@@ -183,7 +183,7 @@ class GameLevelDesert {
     
           };
 
-              const sprite_src_idkwhat = path + "/images/rpg"; // be sure to include the path
+              const sprite_src_idkwhat = path + "/images/rpg/fishies.png"; // be sure to include the path
           const sprite_greet_idkwhat = "Let's take a dive!";
           const sprite_data_idkwhat = {
             id: 'noidea',
@@ -477,7 +477,8 @@ class GameLevelDesert {
       { class: Npc, data: sprite_data_stocks },
       { class: Npc, data: sprite_data_crypto },
       { class: Npc, data: sprite_data_minesweeper },
-      { class: Npc, data: sprite_data_endportal }  // Added End Portal NPC
+      { class: Npc, data: sprite_data_endportal },  // Added End Portal NPC
+      { class: Npc, data: sprite_data_idkwhat} //added uhhhhh idk
     ];
   }
 
