@@ -194,10 +194,10 @@ class GameLevelDesert {
             pixels: {width: 2029, height: 2025},
             INIT_POSITION: { x: (width * 4 / 5), y: (height * 2 / 10)}, // Adjusted position
             orientation: {rows: 8, columns: 12 },
-            down: {row: 0, start: 0, columns: 3 },  
-            left: {row: 1, start: 0, columns: 3 },  
-            right: {row: 2, start: 0, columns: 3 }, 
-            up: {row: 3, start: 0, columns: 3 },    
+            down: {row: 3, start: 3, columns: 3 },  
+            left: {row: 4, start: 3, columns: 3 },  
+            right: {row: 5, start: 3, columns: 3 }, 
+            up: {row: 6, start: 3, columns: 3 },    
             hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
 
             reaction: function() {
