@@ -1,5 +1,6 @@
 import GameObject from "../adventureGame/GameEngine/GameObject.js";
 import Projectile from "./Projectile.js";
+import PlayerTwo from "./PlayerTwo.js";
 class PlayerOne extends GameObject {
     constructor(data = null) {
         super(data);
@@ -24,7 +25,11 @@ class PlayerOne extends GameObject {
                 this.direction = 'right';
                 break;
             case 80: // 'P' key
-            
+            let projectile = new Projectile;
+
+            if(PlayerTwo) {
+                //something here
+            }
                 break;
         }
     }
