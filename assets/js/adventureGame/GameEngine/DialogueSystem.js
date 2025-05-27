@@ -1,7 +1,9 @@
+import GameObject from "./GameObject";
+
 class DialogueSystem {
   constructor(options = {}) {
     // Default dialogue arrays
-    this.dialogues = options.dialogues || [
+    this.dialogues = options.dialogues || GameObject.dialogues [
       "Hey!",
       "pretend im doing small talk, plz",
       "How are you doing?",
