@@ -1,9 +1,10 @@
-import GameObject from "./GameObject";
+import GameLevelDesert from "../GameLevelDesert";
+
 
 class DialogueSystem {
   constructor(options = {}) {
     // Default dialogue arrays
-    this.dialogues = options.dialogues || GameObject.dialogues [
+    this.dialogues = options.dialogues || GameLevelDesert.sprite_data_endportal.dialogues || GameLevelDesert.sprite_data_idkwhat.dialogues || [
       "Hey!",
       "pretend im doing small talk, plz",
       "How are you doing?",
