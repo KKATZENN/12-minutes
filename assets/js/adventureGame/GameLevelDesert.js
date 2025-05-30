@@ -194,7 +194,7 @@ class GameLevelDesert {
             id: 'noidea',
             greeting: sprite_greet_idkwhat,
             src: sprite_src_idkwhat,
-            SCALE_FACTOR: 4,  //no
+            SCALE_FACTOR: 10,  //no
             ANIMATION_RATE: 100,
             pixels: {height: 256, width: 384},
             INIT_POSITION: { x: (width / 4) - 250, y: (height / 4)}, // Adjusted position
