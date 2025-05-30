@@ -214,23 +214,99 @@ class GameLevelDesert {
             },
 
             interact: function() {
-              // Set a primary game reference from the game environment
-              let primaryGame = gameEnv.gameControl;
-              // Define the game in game level
-              let levelArray = [GameLevelDifferentWater];
-              // Define a new GameControl instance with the Different Water level
-              let gameInGame = new GameControl(gameEnv.game, levelArray);
-              // Pause the primary game 
-              primaryGame.pause();
-              // Start the game in game
-              gameInGame.start();
-              // Setup "callback" function to allow transition from game in game to the underlying game
-              gameInGame.gameOver = function() {
-                // Call .resume on primary game
-                primaryGame.resume();
-              }
+              this.dialogueSystem.showDialogue(
+                  "Do you wish to enter THE WATER?",
+                  "Snake",
+                  this.spriteData.src
+              );
+              
+              // Add buttons directly to the dialogue
+              this.dialogueSystem.addButtons([
+                  {
+                      text: "Enter Portal",
+                      primary: true,
+                      action: () => {
+                          this.dialogueSystem.closeDialogue();
+                          
+                          // Clean up the current game state
+                          if (gameEnv && gameEnv.gameControl) {
+                              // Store reference to the current game control
+                              const gameControl = gameEnv.gameControl;
+                              
+                              // Create fade overlay for transition
+                              const fadeOverlay = document.createElement('div');
+                              Object.assign(fadeOverlay.style, {
+                                  position: 'fixed',
+                                  top: '0',
+                                  left: '0',
+                                  width: '100%',
+                                  height: '100%',
+                                  backgroundColor: '#000',
+                                  opacity: '0',
+                                  transition: 'opacity 1s ease-in-out',
+                                  zIndex: '9999'
+                              });
+                              document.body.appendChild(fadeOverlay);
+                              
+                              console.log("Starting the other Water Level transition...");
+                              
+                              // Fade in
+                              requestAnimationFrame(() => {
+                                  fadeOverlay.style.opacity = '1';
+                                  
+                                  // After fade in, transition to End level
+                                  setTimeout(() => {
+                                      // Clean up current level properly
+                                      if (gameControl.currentLevel) {
+                                          // Properly destroy the current level
+                                          console.log("Destroying current level...");
+                                          gameControl.currentLevel.destroy();
+                                          
+                                          // Force cleanup of any remaining canvases
+                                          const gameContainer = document.getElementById('gameContainer');
+                                          const oldCanvases = gameContainer.querySelectorAll('canvas:not(#gameCanvas)');
+                                          oldCanvases.forEach(canvas => {
+                                              console.log("Removing old canvas:", canvas.id);
+                                              canvas.parentNode.removeChild(canvas);
+                                          });
+                                      }
+                                      
+                                      console.log("Setting up End level...");
+                                      
+                                      // IMPORTANT: Store the original level classes for return journey
+                                      gameControl._originalLevelClasses = gameControl.levelClasses;
+                                      
+                                      // Change the level classes to GameLevelEnd
+                                      gameControl.levelClasses = [GameLevelDifferentWater];
+                                      gameControl.currentLevelIndex = 0;
+                                      
+                                      // Make sure game is not paused
+                                      gameControl.isPaused = false;
+                                      
+                                      // Start the End level with the same control
+                                      console.log("Transitioning to the other Water Level");
+                                      gameControl.transitionToLevel();
+                                      
+                                      // Fade out overlay
+                                      setTimeout(() => {
+                                          fadeOverlay.style.opacity = '0';
+                                          setTimeout(() => {
+                                              document.body.removeChild(fadeOverlay);
+                                          }, 800);
+                                      }, 750);
+                                  }, 1500);
+                              });
+                          }
+                      }
+                  },
+                  {
+                      text: "Level is not ready",
+                      action: () => {
+                          this.dialogueSystem.closeDialogue();
+                      }
+                  }
+              ]);
             }
-    
           };
 
 
