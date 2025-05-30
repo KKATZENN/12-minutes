@@ -160,7 +160,7 @@ class GameLevelDesert {
               // Add more later?
             ],
             reaction: function() {
-              const dialogue = new DialogueSystem();
+              const dialogue = new DialogueSystem(sprite_data_endportal);
               
               dialogue.showRandomDialogue();
             },
@@ -208,7 +208,7 @@ class GameLevelDesert {
               "You're breathing too much air, hop in and inhale good nutritious salt water :)"
             ],
             reaction: function() {
-              const dialogue = new DialogueSystem(this.dialogues);
+              const dialogue = new DialogueSystem(sprite_data_idkwhat);
               
               dialogue.showRandomDialogue();
             },
