@@ -194,7 +194,7 @@ class GameLevelDesert {
             id: 'noidea',
             greeting: sprite_greet_idkwhat,
             src: sprite_src_idkwhat,
-            SCALE_FACTOR: 40,  //no
+            SCALE_FACTOR: 4,  //no
             ANIMATION_RATE: 100,
             pixels: {height: 256, width: 384},
             INIT_POSITION: { x: (width / 4) - 250, y: (height / 4)}, // Adjusted position
@@ -218,7 +218,7 @@ class GameLevelDesert {
               let primaryGame = gameEnv.gameControl;
               // Define the game in game level
               let levelArray = [GameLevelDifferentWater];
-              // Define a new GameControl instance with the End level
+              // Define a new GameControl instance with the Different Water level
               let gameInGame = new GameControl(gameEnv.game, levelArray);
               // Pause the primary game 
               primaryGame.pause();
