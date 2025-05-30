@@ -69,10 +69,10 @@ class GameLevelDifferentWater {
         pixels: {height: 256, width: 384},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
         orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 9, columns: 3 }, 
-        left: {row:1, start: 9, columns: 3},
-        right: {row:2, start: 9, columns: 3}, 
-        up: {row:3, start: 9, columns: 3},  
+        down: {row: 0, start: 10, columns: 3 }, 
+        left: {row:1, start: 10, columns: 3},
+        right: {row:2, start: 10, columns: 3}, 
+        up: {row:3, start: 10, columns: 3},  
         dialogues: [
           "Ribbit.",
           "You hear how a mha fan went to a zoo to uh, might I say, interact with the frogs?",
@@ -81,7 +81,9 @@ class GameLevelDifferentWater {
         ],
 
         reaction: function() {
-          DialogueSystem.showRandomDialogue();
+          const dialogue = new DialogueSystem.showRandomDialogue(sprite_data_frog);
+
+          dialogue.showRandomDialogue();
         },
 
         walkingArea: {
@@ -221,7 +223,7 @@ class GameLevelDifferentWater {
     };
 
       setInterval(() => {
-        sprite_data_creeper.updatePosition(); 
+        sprite_data_mantaRay.updatePosition(); 
       }, 100)
       
       setTimeout(() => {

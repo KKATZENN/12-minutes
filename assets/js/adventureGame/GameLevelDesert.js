@@ -199,7 +199,7 @@ class GameLevelDesert {
             pixels: {height: 256, width: 384},
             INIT_POSITION: { x: (width / 4) - 250, y: (height / 4)}, // Adjusted position
             orientation: {rows: 8, columns: 12 },
-            down: {row: 3, start: 3, columns: 3 },  //down is default 
+            down: {row: 4, start: 3, columns: 3 },  //down is default 
             hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
             dialogues: [
               "I love the water, You wanna join me?",

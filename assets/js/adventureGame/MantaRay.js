@@ -8,6 +8,24 @@ class Mantaray extends Enemy {
     }
    
 
+    update() {
+        if(this.y++) {
+            this.direction = 'up';
+        } else if(this.y++ && this.x--) {
+            this.direction = 'upLeft'
+        } else if(this.y++ && this.x++) {
+            this.direction = 'upRight'
+        } else if(this.x--) {
+            this.direction = 'left'
+        } else if(this.y-- && this.x--) {
+            this.direction = 'downLeft'
+        } else if(this.y-- && this.x++) {
+            this.direction = 'downRight'
+        }else if(this.x++) {
+            this.direction = 'right'
+        }
+    }
+
     checkProximityToPlayer() {
         //this.velocity.x=10
         // Filter all Player objects from the game environment
