@@ -213,18 +213,27 @@ class GameLevelDesert {
               dialogue.showRandomDialogue();
             },
           interact: function() {
-            this.DialogueSystem = new DialogueSystem();
-            
-            this.DialogueSystem.showDialogue(
-                  "Do you wish to enter THE WATER?",
-                  "Snake",
+              // Clear any existing dialogue first to prevent duplicates
+              if (this.dialogueSystem && this.dialogueSystem.isDialogueOpen()) {
+                  this.dialogueSystem.closeDialogue();
+              }
+              
+              // Create a new dialogue system if needed
+              if (!this.dialogueSystem) {
+                  this.dialogueSystem = new DialogueSystem();
+              }
+              
+              // Show portal dialogue with buttons
+              this.dialogueSystem.showDialogue(
+                  "Do you wish to enter THE WATER dimension?",
+                  "Water",
                   this.spriteData.src
               );
               
               // Add buttons directly to the dialogue
               this.dialogueSystem.addButtons([
                   {
-                      text: "THE WATER",
+                      text: "WATER",
                       primary: true,
                       action: () => {
                           this.dialogueSystem.closeDialogue();
@@ -249,7 +258,7 @@ class GameLevelDesert {
                               });
                               document.body.appendChild(fadeOverlay);
                               
-                              console.log("Starting the other Water Level transition...");
+                              console.log("Starting WATER level transition...");
                               
                               // Fade in
                               requestAnimationFrame(() => {
@@ -272,7 +281,7 @@ class GameLevelDesert {
                                           });
                                       }
                                       
-                                      console.log("Setting up End level...");
+                                      console.log("Setting up WATER level...");
                                       
                                       // IMPORTANT: Store the original level classes for return journey
                                       gameControl._originalLevelClasses = gameControl.levelClasses;
@@ -284,8 +293,8 @@ class GameLevelDesert {
                                       // Make sure game is not paused
                                       gameControl.isPaused = false;
                                       
-                                      // Start the End level with the same control
-                                      console.log("Transitioning to the other Water Level");
+                                      // Start the level with the same control
+                                      console.log("Transitioning to THE WATER");
                                       gameControl.transitionToLevel();
                                       
                                       // Fade out overlay
@@ -293,21 +302,21 @@ class GameLevelDesert {
                                           fadeOverlay.style.opacity = '0';
                                           setTimeout(() => {
                                               document.body.removeChild(fadeOverlay);
-                                          }, 800);
-                                      }, 750);
-                                  }, 1500);
+                                          }, 1000);
+                                      }, 500);
+                                  }, 1000);
                               });
                           }
                       }
                   },
                   {
-                      text: "Level is not ready",
+                      text: "Not Ready",
                       action: () => {
                           this.dialogueSystem.closeDialogue();
                       }
                   }
               ]);
-            }
+          }
           };
 
 
