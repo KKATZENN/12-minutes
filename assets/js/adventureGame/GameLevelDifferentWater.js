@@ -2,9 +2,9 @@
 import GamEnvBackground from '../adventureGame/GameEngine/GameEnvBackground.js';
 import PlayerOne from '../adventureGame/PlayerOne.js';
 import PlayerTwo from '../adventureGame/PlayerTwo.js';
-import NpcFrog from '../adventureGame/NpcFrog.js';
-import Mantaray from '../adventureGame/MantaRay.js';
+import Npc from './GameEngine/Npc.js';
 import DialogueSystem from '../adventureGame/GameEngine/DialogueSystem.js';
+import Enemy from './GameEngine/Enemy.js';
 
 class GameLevelDifferentWater {
   constructor(gameEnv) {
@@ -242,8 +242,8 @@ class GameLevelDifferentWater {
       { class: GamEnvBackground, data: image_data_water },
       { class: PlayerOne, data: sprite_data_turtle },
       { class: PlayerTwo, data: sprite_data_fish },
-      { class: NpcFrog, data: sprite_data_frog },
-      { class: Mantaray, data: sprite_data_mantaRay}
+      { class: Npc, data: sprite_data_frog },
+      { class: Enemy, data: sprite_data_mantaRay}
     ];
   }
 

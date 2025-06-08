@@ -216,7 +216,7 @@ class GameLevelDesert {
             this.dialogueSystem = new DialogueSystem();  
             
             // Clear any existing dialogue first to prevent duplicates
-              if (this.ialogueSystem && this.dialogueSystem.isDialogueOpen()) {
+              if (this.dialogueSystem && this.dialogueSystem.isDialogueOpen()) {
                   this.dialogueSystem.closeDialogue();
               }
               
@@ -228,13 +228,13 @@ class GameLevelDesert {
               // Show portal dialogue with buttons
               this.dialogueSystem.showDialogue(
                   "Do you wish to enter THE WATER?",
-                  "Yes!"
+                  "Sea Snake"
               );
               
               // Add buttons directly to the dialogue
               this.dialogueSystem.addButtons([
                   {
-                      text: "WATER",
+                      text: "Yes!",
                       primary: true,
                       action: () => {
                           this.dialogueSystem.closeDialogue();
@@ -294,6 +294,9 @@ class GameLevelDesert {
                                       // Make sure game is not paused
                                       gameControl.isPaused = false;
                                       
+                                      console.log("Available levels:", gameControl.levelClasses);
+                                      console.log("Current index:", gameControl.currentLevelIndex);
+
                                       // Start the level with the same control
                                       console.log("Transitioning to THE WATER");
                                       gameControl.transitionToLevel();
