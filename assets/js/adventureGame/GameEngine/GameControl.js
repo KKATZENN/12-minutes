@@ -65,9 +65,6 @@ class GameControl {
      * 3. Starting the game loop
      */ 
     transitionToLevel() {
-        // Clean up any lingering interaction handlers
-        this.cleanupInteractionHandlers();
-
         const GameLevelClass = this.levelClasses[this.currentLevelIndex];
         this.currentLevel = new GameLevel(this);
         this.currentLevel.create(GameLevelClass);
