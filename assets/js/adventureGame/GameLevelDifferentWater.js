@@ -15,8 +15,8 @@ class GameLevelDifferentWater {
     const path = gameEnv.path;
     
     // Values dependent on GameEnv.create()
-    let width = GameEnv.innerWidth;
-    let height = GameEnv.innerHeight;
+    let width = gameEnv.innerWidth;
+    let height = gameEnv.innerHeight;
 
     // Background data
     const image_src_water = path + "/images/rpg/water.png";
@@ -158,6 +158,9 @@ class GameLevelDifferentWater {
         direction: { x: 1, y: 1 },
 
         updatePosition: function () {
+          sprite_data_mantaRay.gameEnv = gameEnv;
+          sprite_data_mantaRay.position = sprite_data_mantaRay.INIT_POSITION;
+
           console.log(`Manta Ray position: (${this.INIT_POSITION.x}, ${this.INIT_POSITION.y})`);
           this.INIT_POSITION.x += this.direction.x * this.speed; // Update x position based on direction and speed
           this.INIT_POSITION.y += this.direction.y * this.speed; // Update y position based on direction and speed
