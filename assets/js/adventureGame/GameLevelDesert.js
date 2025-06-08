@@ -135,7 +135,7 @@ class GameLevelDesert {
         interact: function() {
           let quiz = new Quiz(); // Create a new Quiz instance
           quiz.initialize();
-          quiz.openPanel(sprite_data_octocat);
+          quiz.openPanel(sprite_data_octocat.quiz.questions);
         }
     }
     
@@ -227,8 +227,8 @@ class GameLevelDesert {
               
               // Show portal dialogue with buttons
               this.dialogueSystem.showDialogue(
-                  "Do you wish to enter THE WATER dimension?",
-                  "Water"
+                  "Do you wish to enter THE WATER?",
+                  "Yes!"
               );
               
               // Add buttons directly to the dialogue
@@ -297,6 +297,7 @@ class GameLevelDesert {
                                       // Start the level with the same control
                                       console.log("Transitioning to THE WATER");
                                       gameControl.transitionToLevel();
+                                      console.log("Successfully transitioned!")
                                       
                                       // Fade out overlay
                                       setTimeout(() => {
