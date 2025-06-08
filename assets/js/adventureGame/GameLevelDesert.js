@@ -213,8 +213,10 @@ class GameLevelDesert {
               dialogue.showRandomDialogue();
             },
           interact: function() {
-              // Clear any existing dialogue first to prevent duplicates
-              if (this.dialogueSystem && this.dialogueSystem.isDialogueOpen()) {
+            this.dialogueSystem = new DialogueSystem();  
+            
+            // Clear any existing dialogue first to prevent duplicates
+              if (this.ialogueSystem && this.dialogueSystem.isDialogueOpen()) {
                   this.dialogueSystem.closeDialogue();
               }
               
@@ -227,10 +229,11 @@ class GameLevelDesert {
               this.dialogueSystem.showDialogue(
                   "Do you wish to enter THE WATER dimension?",
                   "Water",
-                  this.spriteData.src
+                  sprite_data_idkwhat.src
               );
               
               // Add buttons directly to the dialogue
+              console.log("Adding buttons", this.dialogueSystem);
               this.dialogueSystem.addButtons([
                   {
                       text: "WATER",

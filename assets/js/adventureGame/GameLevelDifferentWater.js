@@ -31,7 +31,6 @@ class GameLevelDifferentWater {
         name: 'turtle',
         src: sprite_src_turtle,
         SCALE_FACTOR: TURTLE_SCALE_FACTOR,
-        STEP_FACTOR: 1000,
         ANIMATION_RATE: 50,
         INIT_POSITION: { x: 0, y: height - (height/TURTLE_SCALE_FACTOR) }, 
         pixels: {height: 280, width: 256},
@@ -53,10 +52,10 @@ class GameLevelDifferentWater {
         pixels: {height: 256, width: 384},
         INIT_POSITION: { x: 0, y: 0 },
         orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 0, columns: 3 },  // 1st row
-        left: {row: 1, start: 0, columns: 3 },  // 2nd row
-        right: {row: 2, start: 0, columns: 3 }, // 3rd row
-        up: {row: 3, start: 0, columns: 3 },    // 4th row
+        down: {row: 0, start: 0, columns: 3 },  
+        left: {row: 1, start: 0, columns: 3 },  
+        right: {row: 2, start: 0, columns: 3 }, 
+        up: {row: 3, start: 0, columns: 3 },    
     };
 
     // NPC sprite data (frog)
