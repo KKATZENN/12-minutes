@@ -287,7 +287,7 @@ class GameLevelDesert {
                                       // IMPORTANT: Store the original level classes for return journey
                                       gameControl._originalLevelClasses = gameControl.levelClasses;
 
-                                      // Change the level classes to GameLevelEnd
+                                      // Change the level classes to GameLevelDifferentWater
                                       gameControl.levelClasses = [GameLevelDifferentWater];
                                       gameControl.currentLevelIndex = 0;
                                       
