@@ -8,10 +8,12 @@ import Mantaray from '../adventureGame/MantaRay.js';
 import DialogueSystem from '../adventureGame/GameEngine/DialogueSystem.js';
 
 class GameLevelDifferentWater {
-  constructor(path) {
-    const header = document.querySelector('header');
+  constructor(gameEnv) {
+  const header = document.querySelector('header');
     const footer = document.querySelector('footer');
-
+    this.gameEnv = gameEnv;
+    const path = gameEnv.path;
+    
     // Values dependent on GameEnv.create()
     let width = GameEnv.innerWidth;
     let height = GameEnv.innerHeight;
