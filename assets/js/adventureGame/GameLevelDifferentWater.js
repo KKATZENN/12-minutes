@@ -79,9 +79,9 @@ class GameLevelDifferentWater {
         ],
 
         reaction: function() {
-          const dialogue = new DialogueSystem.showRandomDialogue(sprite_data_frog);
+          const dialogue = new DialogueSystem;
 
-          dialogue.showRandomDialogue();
+          dialogue.showRandomDialogue(sprite_data_frog);
         },
 
         walkingArea: {
@@ -220,22 +220,28 @@ class GameLevelDifferentWater {
             // Update position
             this.position.x += Math.cos(angle) * speed;
             this.position.y += Math.sin(angle) * speed;
-          }
-    };
 
-      setInterval(() => {
-        sprite_data_mantaRay.updatePosition(); 
-      }, 100)
+            setInterval(() => {
+              sprite_data_mantaRay.updatePosition(); 
+            }, 100)
+
+            if(this.playerDestroyed) {
+              setTimeout(() => {
+                // Clean up any lingering resources before reload
+                if (self && self.timerInterval) {
+                  clearInterval(self.timerInterval);
+              }
+            // Force a complete page reload - most reliable way to reset
+            location.reload();
+              }, 4000);
+            }
+          }
+
+      };
+
+
       
-      setTimeout(() => {
-      // Clean up any lingering resources before reload
-        if (self && self.timerInterval) {
-          clearInterval(self.timerInterval);
-        }
-                        
-        // Force a complete page reload - most reliable way to reset
-        location.reload();
-      }, 4000);
+
 
     // List of objects defnitions for this level
     this.classes = [

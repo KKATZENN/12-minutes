@@ -71,7 +71,6 @@ class Enemy extends Character {
     handleCollisionEvent() {
         console.log("Player collided with the Enemy. Player is dead.");
         this.playerDestroyed = true; // Mark the player as "dead"
-        alert("KABOOM!!");
         this.gameEnv.gameControl.currentLevel.restart = true; 
     }
 
