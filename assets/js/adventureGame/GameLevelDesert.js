@@ -272,8 +272,8 @@ class GameLevelDesert {
                                       // Clean up current level properly
                                       if (gameControl.currentLevel) {
                                           // Properly destroy the current level
-                                          console.log("Destroying current level...");
-                                          gameControl.currentLevel.destroy();
+                                          console.log("Pausing Current Level");
+                                          gameControl.currentLevel.pause();
                                           
                                           // Force cleanup of any remaining canvases
                                           const gameContainer = document.getElementById('gameContainer');
@@ -288,7 +288,7 @@ class GameLevelDesert {
                                       
                                       // IMPORTANT: Store the original level classes for return journey
                                       gameControl._originalLevelClasses = gameControl.levelClasses;
-                                      
+
                                       // Change the level classes to GameLevelEnd
                                       gameControl.levelClasses = [GameLevelDifferentWater];
                                       gameControl.currentLevelIndex = 0;

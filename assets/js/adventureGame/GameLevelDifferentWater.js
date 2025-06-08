@@ -236,7 +236,7 @@ class GameLevelDifferentWater {
       }, 4000);
 
     // List of objects defnitions for this level
-    this.objects = [
+    this.classes = [
       { class: Background, data: image_data_water },
       { class: PlayerOne, data: sprite_data_turtle },
       { class: PlayerTwo, data: sprite_data_fish },
