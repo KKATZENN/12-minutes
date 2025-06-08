@@ -1,9 +1,15 @@
 import GameObject from "../adventureGame/GameEngine/GameObject.js";
 import Projectile from "./Projectile.js";
-import PlayerTwo from "./PlayerTwo.js";
+
 class PlayerOne extends GameObject {
     constructor(data = null) {
         super(data);
+    }
+
+        update() {
+        this.draw();
+        this.collisionChecks();
+        this.move();
     }
 
     handleKeyDown({ keyCode }) {
@@ -27,9 +33,6 @@ class PlayerOne extends GameObject {
             case 80: // 'P' key
             let projectile = new Projectile;
 
-            if(PlayerTwo) {
-                //something here
-            }
                 break;
         }
     }

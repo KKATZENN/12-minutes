@@ -5,6 +5,12 @@ class PlayerTwo extends GameObject {
         super(imageSrc);
     }
 
+    update() {
+        this.draw();
+        this.collisionChecks();
+        this.move();
+    }
+
     handleKeyDown({ keyCode }) {
         switch (keyCode) {
             case 73: // 'I' key
