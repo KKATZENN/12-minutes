@@ -1,14 +1,8 @@
-import GameObject from '../adventureGame/GameEngine/GameObject.js';
+import Character from './GameEngine/Character.js';
 
-class PlayerTwo extends GameObject {
+class PlayerTwo extends Character {
     constructor(imageSrc = null) {
         super(imageSrc);
-    }
-
-    update() {
-        this.draw();
-        this.collisionChecks();
-        this.move();
     }
 
     handleKeyDown({ keyCode }) {

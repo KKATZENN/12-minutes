@@ -1,16 +1,11 @@
-import GameObject from "../adventureGame/GameEngine/GameObject.js";
+import Character from "./GameEngine/Character.js";
 import Projectile from "./Projectile.js";
 
-class PlayerOne extends GameObject {
+class PlayerOne extends Character {
     constructor(data = null) {
         super(data);
     }
 
-        update() {
-        this.draw();
-        this.collisionChecks();
-        this.move();
-    }
 
     handleKeyDown({ keyCode }) {
         switch (keyCode) {
