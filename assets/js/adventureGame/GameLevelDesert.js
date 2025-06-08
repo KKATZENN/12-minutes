@@ -272,8 +272,8 @@ class GameLevelDesert {
                                       // Clean up current level properly
                                       if (gameControl.currentLevel) {
                                           // Properly destroy the current level
-                                          console.log("Pausing Current Level");
-                                          gameControl.currentLevel.pause();
+                                          console.log("Destroying current level");
+                                          gameControl.currentLevel.destroy();
                                           
                                           // Force cleanup of any remaining canvases
                                           const gameContainer = document.getElementById('gameContainer');
