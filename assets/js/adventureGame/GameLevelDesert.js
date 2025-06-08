@@ -228,12 +228,10 @@ class GameLevelDesert {
               // Show portal dialogue with buttons
               this.dialogueSystem.showDialogue(
                   "Do you wish to enter THE WATER dimension?",
-                  "Water",
-                  sprite_data_idkwhat.src
+                  "Water"
               );
               
               // Add buttons directly to the dialogue
-              console.log("Adding buttons", this.dialogueSystem);
               this.dialogueSystem.addButtons([
                   {
                       text: "WATER",
@@ -249,7 +247,7 @@ class GameLevelDesert {
                               // Create fade overlay for transition
                               const fadeOverlay = document.createElement('div');
                               Object.assign(fadeOverlay.style, {
-                                  position: 'fixed',
+                                  position: 'fixed',  
                                   top: '0',
                                   left: '0',
                                   width: '100%',

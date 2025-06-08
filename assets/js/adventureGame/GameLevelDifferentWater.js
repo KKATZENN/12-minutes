@@ -1,6 +1,5 @@
 // To build GameLevels, each contains GameObjects from below imports
-import GameEnv from '../adventureGame/GameEngine/GameEnv.js';
-import Background from '../adventureGame/GameEngine/Background.js';
+import GamEnvBackground from '../adventureGame/GameEngine/GameEnvBackground.js';
 import PlayerOne from '../adventureGame/PlayerOne.js';
 import PlayerTwo from '../adventureGame/PlayerTwo.js';
 import NpcFrog from '../adventureGame/NpcFrog.js';
@@ -9,14 +8,12 @@ import DialogueSystem from '../adventureGame/GameEngine/DialogueSystem.js';
 
 class GameLevelDifferentWater {
   constructor(gameEnv) {
-  const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
     this.gameEnv = gameEnv;
-    const path = gameEnv.path;
     
     // Values dependent on GameEnv.create()
     let width = gameEnv.innerWidth;
     let height = gameEnv.innerHeight;
+    let path = gameEnv.path;
 
     // Background data
     const image_src_water = path + "/images/rpg/water.png";
@@ -242,7 +239,7 @@ class GameLevelDifferentWater {
 
     // List of objects defnitions for this level
     this.classes = [
-      { class: Background, data: image_data_water },
+      { class: GamEnvBackground, data: image_data_water },
       { class: PlayerOne, data: sprite_data_turtle },
       { class: PlayerTwo, data: sprite_data_fish },
       { class: NpcFrog, data: sprite_data_frog },
