@@ -1,7 +1,6 @@
 // To build GameLevels, each contains GameObjects from below imports
 import GamEnvBackground from '../adventureGame/GameEngine/GameEnvBackground.js';
-import PlayerOne from '../adventureGame/PlayerOne.js';
-import PlayerTwo from '../adventureGame/PlayerTwo.js';
+import Player from './GameEngine/Player.js';
 import Npc from './GameEngine/Npc.js';
 import DialogueSystem from '../adventureGame/GameEngine/DialogueSystem.js';
 import Enemy from './GameEngine/Enemy.js';
@@ -12,6 +11,9 @@ class GameLevelDifferentWater {
     let width = gameEnv.innerWidth;
     let height = gameEnv.innerHeight;
     let path = gameEnv.path;
+
+    //enemy
+    let enemy = new Enemy;
 
     // Background data
     const image_src_water = path + "/images/rpg/water.png";
@@ -41,6 +43,8 @@ class GameLevelDifferentWater {
         upLeft: {row: 3, start: 0, columns: 3, rotate: Math.PI/16 },
         upRight: {row: 3, start: 0, columns: 3, rotate: -Math.PI/16 },
         hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
+        keypress: { up: 87, left: 65, down: 83, right: 68 }
+
     };
 
     // Player 2 sprite data (fish)
@@ -63,6 +67,7 @@ class GameLevelDifferentWater {
         upLeft: {row: 2, start: 0, columns: 3, rotate: Math.PI/16 },
         upRight: {row: 1, start: 0, columns: 3, rotate: -Math.PI/16 },
         hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
+        keypress: { up: 73, left: 74, down: 75, right: 76 }
     };
 
     // NPC sprite data (frog)
@@ -233,7 +238,7 @@ class GameLevelDifferentWater {
               sprite_data_mantaRay.updatePosition(); 
             }, 100)
 
-            if(this.playerDestroyed) {
+            if(this.enemy.playerDestroyed) {
               setTimeout(() => {
                 // Clean up any lingering resources before reload
                 if (self && self.timerInterval) {
@@ -254,8 +259,8 @@ class GameLevelDifferentWater {
     // List of objects defnitions for this level
     this.classes = [
       { class: GamEnvBackground, data: image_data_water },
-      { class: PlayerOne, data: sprite_data_turtle },
-      { class: PlayerTwo, data: sprite_data_fish },
+      { class: Player, data: sprite_data_turtle },
+      { class: Player, data: sprite_data_fish },
       { class: Npc, data: sprite_data_frog },
       { class: Enemy, data: sprite_data_mantaRay}
     ];
