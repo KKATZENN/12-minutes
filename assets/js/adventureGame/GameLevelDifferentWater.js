@@ -1,5 +1,6 @@
 // To build GameLevels, each contains GameObjects from below imports
 import GamEnvBackground from '../adventureGame/GameEngine/GameEnvBackground.js';
+import GameEnv from './GameEngine/GameEnv.js';
 import PlayerOne from '../adventureGame/PlayerOne.js';
 import PlayerTwo from '../adventureGame/PlayerTwo.js';
 import Npc from './GameEngine/Npc.js';
@@ -8,7 +9,7 @@ import Enemy from './GameEngine/Enemy.js';
 
 class GameLevelDifferentWater {
   constructor(gameEnv) {
-    this.gameEnv = gameEnv;
+    this.gameEnv = new GameEnv;
     
     // Values dependent on GameEnv.create()
     let width = gameEnv.innerWidth;
@@ -35,9 +36,14 @@ class GameLevelDifferentWater {
         pixels: {height: 280, width: 256},
         orientation: {rows: 4, columns: 3 },
         down: {row: 0, start: 0, columns: 3 },
+        downRight: {row: 0, start: 0, columns: 3, rotate: Math.PI/16 },
+        downLeft: {row: 0, start: 0, columns: 3, rotate: -Math.PI/16 },
         left: {row: 1, start: 0, columns: 3 },
         right: {row: 2, start: 0, columns: 3 },
         up: {row: 3, start: 0, columns: 3 },
+        upLeft: {row: 3, start: 0, columns: 3, rotate: Math.PI/16 },
+        upRight: {row: 3, start: 0, columns: 3, rotate: -Math.PI/16 },
+        hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
     };
 
     // Player 2 sprite data (fish)
@@ -51,10 +57,15 @@ class GameLevelDifferentWater {
         pixels: {height: 256, width: 384},
         INIT_POSITION: { x: 0, y: 0 },
         orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 0, columns: 3 },  
+        down: {row: 0, start: 0, columns: 3 }, 
+        downRight: {row: 0, start: 0, columns: 3, rotate: Math.PI/16 },
+        downLeft: {row: 0, start: 0, columns: 3, rotate: -Math.PI/16 }, 
         left: {row: 1, start: 0, columns: 3 },  
         right: {row: 2, start: 0, columns: 3 }, 
         up: {row: 3, start: 0, columns: 3 },    
+        upLeft: {row: 2, start: 0, columns: 3, rotate: Math.PI/16 },
+        upRight: {row: 1, start: 0, columns: 3, rotate: -Math.PI/16 },
+        hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
     };
 
     // NPC sprite data (frog)
