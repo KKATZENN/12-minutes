@@ -288,7 +288,7 @@ class GameLevelDesert {
                                       gameControl._originalLevelClasses = gameControl.levelClasses;
 
                                       // Change the level classes to GameLevelDifferentWater
-                                      gameControl.levelClasses = [GameLevelEnd];
+                                      gameControl.levelClasses = [GameLevelDifferentWater];
                                       gameControl.currentLevelIndex = 0;
                                       
                                       // Make sure game is not paused

@@ -237,8 +237,13 @@ class GameLevelDifferentWater {
             setInterval(() => {
               sprite_data_mantaRay.updatePosition(); 
             }, 100)
-
+            
+            const playerX = player.position.x;
+            const playerY = player.position.y;
+                    
             if(this.enemy.playerDestroyed) {
+              enemy.explode(playerX, playerY);
+              
               setTimeout(() => {
                 // Clean up any lingering resources before reload
                 if (self && self.timerInterval) {
