@@ -1,6 +1,5 @@
 // To build GameLevels, each contains GameObjects from below imports
 import GamEnvBackground from '../adventureGame/GameEngine/GameEnvBackground.js';
-import GameEnv from './GameEngine/GameEnv.js';
 import PlayerOne from '../adventureGame/PlayerOne.js';
 import PlayerTwo from '../adventureGame/PlayerTwo.js';
 import Npc from './GameEngine/Npc.js';
@@ -9,8 +8,6 @@ import Enemy from './GameEngine/Enemy.js';
 
 class GameLevelDifferentWater {
   constructor(gameEnv) {
-    this.gameEnv = new GameEnv;
-    
     // Values dependent on GameEnv.create()
     let width = gameEnv.innerWidth;
     let height = gameEnv.innerHeight;
