@@ -253,7 +253,29 @@ class GameLevelDifferentWater {
             location.reload();
               }, 4000);
             }
-          }
+          },
+      playanimation: function() {
+        if (this.isAnimating) return;//if already animating,stop checking
+        this.isAnimating = true; // Mark animation as running
+    
+        const spriteElement = document.getElementById(this.id); //Get the DOM element representing the sprite
+        if (!spriteElement) {
+          this.isAnimating = false; //if there is no id, then stop checking
+          return;
+        }
+    
+        spriteElement.style.transition = 'filter 1s ease-in-out'; // Set the CSS transition property
+        spriteElement.style.filter = 'scale(1.5) brightness(1.5)'; //make bigger and a little brighter
+        this.velocity.x *= 1.5; //multiply velocity by 1.5
+    
+        setTimeout(() => {
+          spriteElement.style.filter = 'none';
+          setTimeout(() => {
+            spriteElement.style.transition = '';
+            this.isAnimating = false;
+          }, 1000);
+        }, 1000);
+      }
 
       };
 
